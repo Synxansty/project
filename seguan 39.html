@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 300vh;
+            background-image: linear-gradient(orange,yellow);
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1 {
+            color: white;
+            animation-name: text;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes text {
+            0%{
+                color: red;
+                transform: translateX(-100px);
+            }
+            50%{
+                color: green;
+            }
+            100%{
+                color: blue;
+                transform: translateX(100px);
+            }
+            }
+        img {
+            width: 250px;
+            height: 150px;
+            display: none;
+        }
+        button{
+            background-color: orangered;
+            color: white;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><u>Riddle App</u></h1>
+    </header>
+    <h2 id="score">0</h2>
+    <h3>1. What goes up but never goes down?</h3>
+    <input type="text" name="" id="q1">
+    <button onclick="q1()">submit answer</button>
+    <button onclick="h1()">hint</button>
+    <h4 id="a1"></h4>
+    <img id="i1" src="https://cdn.quizly.co/wp-content/uploads/2018/03/12022731/Are-You-An-Old-Person-In-A-Young-Persons-Body.jpg">
+    <h3>2. What is so delicate that saying its name breaks it?</h3>
+    <input type="text" name="" id="q2">
+    <button onclick="q2()">submit answer</button>
+    <button onclick="h2()">hint</button>
+    <h4 id="a2"></h4>
+    <img id="i2" src="https://npr.brightspotcdn.com/dims4/default/c8689b4/2147483647/strip/true/crop/1280x960+0+0/resize/880x660!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Flegacy%2Fsites%2Fwnpr%2Ffiles%2F201412%2Fsilence.jpg">
+    <h3>3. What can fill a room but takes up no space?</h3>
+    <input type="text" name="" id="q3">
+    <button onclick="q3()">submit answer</button>
+    <button onclick="h3()">hint</button>
+    <h4 id="a3"></h4>
+    <img id="i3" src="https://www.thoughtco.com/thmb/-FenOO8K8sbFrh0O1xlra6U6Tg8=/2059x1456/filters:fill(auto,1)/GettyImages-914450516-5a831486642dca0037213a33.jpg">
+    <h3>3. What has four wheels and flies?</h3>
+    <input type="text" name="" id="q4">
+    <button onclick="q4()">submit answer</button>
+    <button onclick="h4()">hint</button>
+    <h4 id="a4"></h4>
+    <img id="i4" src="https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/T2021_47293_smaller-1?wid=1024">
+</body>
+<script>
+    score = 0;
+    var r1 = false;
+    var t1 = false;
+    var s1 = false;
+    function h1(){
+        if(t1 == false){
+            document.getElementById("i1").style.display = "inline-block";
+            if(r1 == false){
+            t1 = true;
+            score = score - 0.5 
+            document.getElementById("score").innerText = score;
+            r1 = true;
+            }
+        }
+        else{
+           document.getElementById("i1").style.display = "none";
+           t1 = false;
+        }
+    }
+
+    function q1(){
+        var a1 = document.getElementById("q1").value;
+
+        if(a1.toUpperCase() == "AGE"){
+            if(s1 == false){
+            document.getElementById("a1").innerText = 
+            "correct answer yay";
+            score = score + 1;
+            document.getElementById("score").innerText = score;
+            s1 = true;
+        }
+        }
+        else {
+            document.getElementById("a1").innerText =
+            "u wrong haha"
+        }
+    }
+
+    var t2 = false;
+    var r2 = false;
+    var s2 = false;
+    function h2(){
+        if(t2 == false){
+            document.getElementById("i2").style.display = "inline-block";
+            if(r2 == false){
+            t2 = true;
+            score = score - 0.5 
+            document.getElementById("score").innerText = score;
+            r2 = true;
+            }
+        }
+        else{
+           document.getElementById("i2").style.display = "none";
+           t2 = false;
+        }
+    }
+
+    function q2(){
+        var a2 = document.getElementById("q2").value;
+
+        if(a2.toUpperCase() == "SILENCE"){
+            if(s2 == false){
+            document.getElementById("a2").innerText = 
+            "correct answer yay";
+            score = score + 1;
+            document.getElementById("score").innerText = score;
+            s2 = true;
+            }
+        }
+        else {
+            document.getElementById("a2").innerText =
+            "u wrong haha"
+        }
+    }
+
+    var t3 = false;
+    var r3 = false;
+    var s3 = false;
+    function h3(){
+        if(t3 == false){
+            document.getElementById("i3").style.display = "inline-block";
+            if(r3 == false){
+            t3 = true;
+            score = score - 0.5 
+            document.getElementById("score").innerText = score;
+            r3 = true;
+            }
+        }
+        else{
+           document.getElementById("i3").style.display = "none";
+           t3 = false;
+        }
+    }
+
+    function q3(){
+        var a3 = document.getElementById("q3").value;
+
+        if(a3.toUpperCase() == "AIR"){
+            if(s3 == false){
+            document.getElementById("a3").innerText = 
+            "correct answer yay";
+            score = score + 1;
+            document.getElementById("score").innerText = score;
+            s3 = true;
+            }
+        }
+        else {
+            document.getElementById("a3").innerText =
+            "u wrong haha"
+        }
+    }
+
+    var t4 = false;
+    var r4 = false;
+    var s4 = false;
+    function h4(){
+        if(t4 == false){
+            document.getElementById("i4").style.display = "inline-block";
+            if(r4 == false){
+            t4 = true;
+            score = score - 0.5 
+            document.getElementById("score").innerText = score;
+            r4 = true;
+            }
+        }
+        else{
+           document.getElementById("i4").style.display = "none";
+           t4 = false;
+        }
+    }
+
+    function q4(){
+        var a4 = document.getElementById("q4").value;
+
+        if(a4.toUpperCase() == "GARBAGE TRUCK"){
+            if(s4 == false){
+            document.getElementById("a4").innerText = 
+            "correct answer yay";
+            score = score + 1;
+            document.getElementById("score").innerText = score;
+            s4 = true;
+            }
+        }
+        else {
+            document.getElementById("a4").innerText =
+            "u wrong haha"
+        }
+    }
+</script>
+</html>
